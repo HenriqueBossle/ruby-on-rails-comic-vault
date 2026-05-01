@@ -58,8 +58,7 @@ group :development, :test do
 
   gem "awesome_print"
   gem "dotenv-rails"
-  gem "rspec-rails"
-  gem "rubocop"
+
 end
 
 group :development do
