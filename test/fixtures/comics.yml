@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  issue: 1
+  publishData: MyString
+  pageNumber: 1
+  imageUrl: MyString
+  franchise: one
+
+two:
+  name: MyString
+  issue: 1
+  publishData: MyString
+  pageNumber: 1
+  imageUrl: MyString
+  franchise: two

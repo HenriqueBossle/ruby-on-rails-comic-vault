@@ -1,0 +1,48 @@
+<%= form_with model: comic do |f| %>
+  <% if comic.errors.any? %>
+    <div>
+      <h2><%= pluralize(comic.errors.count, "erro") %> impediram o salvamento:</h2>
+      <ul>
+        <% comic.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :issue, "Edição" %><br>
+    <%= f.number_field :issue %>
+  </div>
+
+  <div>
+    <%= f.label :publishData, "Data de Publicação" %><br>
+    <%= f.text_field :publishData %>
+  </div>
+
+  <div>
+    <%= f.label :pageNumber, "Número de Páginas" %><br>
+    <%= f.number_field :pageNumber %>
+  </div>
+
+  <div>
+    <%= f.label :imageUrl, "URL da Imagem" %><br>
+    <%= f.text_field :imageUrl %>
+  </div>
+
+  <div>
+    <%= f.label :franchise_id, "Franquia" %><br>
+    <%= f.collection_select :franchise_id, Franchise.all, :id, :name, prompt: "Selecione uma franquia" %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.submit "Criar HQ" %>
+  </div>
+<% end %>
