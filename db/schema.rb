@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_01_231047) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_02_021131) do
   create_table "comics", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "franchise_id", null: false
@@ -26,6 +26,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_01_231047) do
   create_table "franchises", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.string "password_digest"
     t.datetime "updated_at", null: false
   end
 
