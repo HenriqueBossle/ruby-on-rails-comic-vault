@@ -1,2 +1,24 @@
-<h1>Comics#index</h1>
-<p>Find me in app/views/comics/index.html.erb</p>
+<h1 class="title">COMICS</h1>
+
+<div id="comics">
+  <% @comics.each do |comic| %>
+    <div class="comic-card">
+      
+      <% if comic.imageUrl.present? %>
+        <img src="<%= comic.imageUrl %>" alt="comic image">
+      <% end %>
+
+      <div class="comic-info">
+        <h2><%= comic.name %></h2>
+        <p>Edição #<%= comic.issue %></p>
+        <p><%= comic.publishData %></p>
+        <p><%= comic.pageNumber %> páginas</p>
+      </div>
+
+    </div>
+  <% end %>
+</div>
+
+<div class="logout">
+  <%= button_to "Logout", logout_path, method: :delete %>
+</div>

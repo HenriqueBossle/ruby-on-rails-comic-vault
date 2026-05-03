@@ -1,2 +1,27 @@
-<h1>Comics#show</h1>
-<p>Find me in app/views/comics/show.html.erb</p>
+<div class="comic-show">
+
+  <% if @comic.imageUrl.present? %>
+    <img src="<%= @comic.imageUrl %>" class="comic-show-img">
+  <% end %>
+
+  <div class="comic-show-info">
+    <h1><%= @comic.name %></h1>
+    <% if comic.imageUrl.present? %>
+        <img src="<%= comic.imageUrl %>" alt="comic image">
+    <% end %>
+
+    <p><strong>Edição:</strong> <%= @comic.issue %></p>
+    <p><strong>Data:</strong> <%= @comic.publishData %></p>
+    <p><strong>Páginas:</strong> <%= @comic.pageNumber %></p>
+    <p><strong>Franquia:</strong> <%= @comic.franchise.name %></p>
+    
+
+    <div class="actions">
+      <%= link_to "Editar", edit_comic_path(@comic) %>
+      <%= button_to "Deletar", @comic, method: :delete %>
+    </div>
+
+    <%= link_to "Voltar", comics_path, class: "back-link" %>
+  </div>
+
+</div>

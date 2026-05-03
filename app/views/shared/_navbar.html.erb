@@ -1,0 +1,17 @@
+<nav>
+  <h2>ComicVault</h2>
+
+  <% if logged_in? %>
+    <span>Olá, <%= current_user.name %></span>
+
+    <%= link_to "HQs", comics_path %>
+    <%= link_to "Nova HQ", new_comic_path %>
+
+    <%= button_to "Logout", "/logout", method: :delete %>
+  <% else %>
+    <%= link_to "Login", "/login" %>
+    <%= link_to "Cadastrar", "/signup" %>
+  <% end %>
+</nav>
+
+<hr>
