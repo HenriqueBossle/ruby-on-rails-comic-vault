@@ -1,2 +1,44 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1 class="form-title">Criar Conta</h1>
+
+<%= form_with model: @user, html: { class: "comic-form" } do |f| %>
+
+  <% if @user.errors.any? %>
+    <div class="form-errors">
+      <h2><%= pluralize(@user.errors.count, "erro") %> impediram o cadastro:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Nome" %>
+    <%= f.text_field :name, placeholder: "Seu nome" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, placeholder: "seu@email.com" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, "Senha" %>
+    <%= f.password_field :password, placeholder: "Mínimo 6 caracteres" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, "Confirmar senha" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Criar Conta" %>
+  </div>
+
+  <div class="form-extra">
+    <%= link_to "Já tem conta? Fazer login", "/login" %>
+  </div>
+
+<% end %>

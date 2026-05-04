@@ -1,6 +1,7 @@
-<%= form_with model: comic do |f| %>
+<%= form_with model: comic, html: { class: "comic-form" } do |f| %>
+
   <% if comic.errors.any? %>
-    <div>
+    <div class="form-errors">
       <h2><%= pluralize(comic.errors.count, "erro") %> impediram o salvamento:</h2>
       <ul>
         <% comic.errors.full_messages.each do |msg| %>
@@ -10,39 +11,38 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :name, "Nome" %><br>
+  <div class="form-group">
+    <%= f.label :name, "Nome" %>
     <%= f.text_field :name %>
   </div>
 
-  <div>
-    <%= f.label :issue, "Edição" %><br>
+  <div class="form-group">
+    <%= f.label :issue, "Edição" %>
     <%= f.number_field :issue %>
   </div>
 
-  <div>
-    <%= f.label :publishData, "Data de Publicação" %><br>
+  <div class="form-group">
+    <%= f.label :publishData, "Data de Publicação" %>
     <%= f.text_field :publishData %>
   </div>
 
-  <div>
-    <%= f.label :pageNumber, "Número de Páginas" %><br>
+  <div class="form-group">
+    <%= f.label :pageNumber, "Número de Páginas" %>
     <%= f.number_field :pageNumber %>
   </div>
 
-  <div>
-    <%= f.label :imageUrl, "URL da Imagem" %><br>
+  <div class="form-group">
+    <%= f.label :imageUrl, "URL da Imagem" %>
     <%= f.text_field :imageUrl %>
   </div>
 
-  <div>
-    <%= f.label :franchise_id, "Franquia" %><br>
-    <%= f.collection_select :franchise_id, Franchise.all, :id, :name, prompt: "Selecione uma franquia" %>
+  <div class="form-group">
+    <%= f.label :franchise_id, "Franquia" %>
+    <%= f.collection_select :franchise_id, Franchise.order(:name), :id, :name, prompt: "Selecione uma franquia" %>
   </div>
 
-  <br>
-
-  <div>
-    <%= f.submit "Criar HQ" %>
+  <div class="form-actions">
+    <%= f.submit comic.persisted? ? "Atualizar HQ" : "Criar HQ" %>
   </div>
+
 <% end %>

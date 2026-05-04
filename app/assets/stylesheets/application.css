@@ -1,10 +1,473 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* RESET */
+body {
+  margin: 0;
+  font-family: 'Arial Black', sans-serif;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+/* TÍTULO */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #e62429; /* vermelho Marvel */
+  margin-bottom: 30px;
+}
+
+/* GRID */
+#comics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* CARD */
+.comic-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* HOVER IMPACTO */
+.comic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.7);
+}
+
+/* IMAGEM */
+.comic-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* INFO */
+.comic-info {
+  padding: 15px;
+}
+
+.comic-info h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #e62429;
+}
+
+.comic-info p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* BOTÃO LOGOUT */
+.logout {
+  text-align: center;
+  margin: 30px;
+}
+
+.logout input {
+  background: #e62429;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout input:hover {
+  background: #b71c1c;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #111;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e62429;
+}
+
+/* LOGO */
+nav h2 {
+  margin: 0;
+  color: #e62429;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* CONTAINER DIREITA */
+nav span {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* LINKS */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e62429;
+}
+
+/* BOTÃO LOGOUT */
+nav form {
+  display: inline;
+}
+
+nav input {
+  background: #e62429;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+nav input:hover {
+  background: #b71c1c;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav div {
+    margin-top: 10px;
+  }
+}
+
+/* TÍTULO */
+.form-title {
+  text-align: center;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+/* FORM CONTAINER */
+.comic-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.2);
+}
+
+/* GRUPOS */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e62429;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #0d0d0d;
+  color: white;
+}
+
+/* FOCUS */
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #e62429;
+  box-shadow: 0 0 5px #e62429;
+}
+
+/* BOTÃO */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-actions input {
+  background: #e62429;
+  border: none;
+  padding: 12px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-actions input:hover {
+  background: #b71c1c;
+}
+
+/* ERROS */
+.form-errors {
+  background: #330000;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.form-errors h2 {
+  color: #ff4d4d;
+}
+
+.form-errors li {
+  color: #ff9999;
+}
+
+/* LINK EXTRA */
+.form-extra {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.form-extra a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.form-extra a:hover {
+  color: #e62429;
+}
+
+/* INPUTS ESPECÍFICOS LOGIN */
+.comic-form input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comic-show {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+.comic-show-img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.comic-show-info {
+  color: white;
+}
+
+.comic-show-info h1 {
+  color: #e62429;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions a,
+.actions form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.actions a {
+  color: white;
+  text-decoration: none;
+  background: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.actions a:hover {
+  background: #e62429;
+}
+
+.actions input {
+  background: #e62429;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* TÍTULO */
+.form-title {
+  text-align: center;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+/* CONTAINER FORM */
+.comic-form {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.2);
+}
+
+/* GRUPO */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e62429;
+}
+
+/* INPUT */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #0d0d0d;
+  color: white;
+}
+
+/* FOCUS */
+.form-group input:focus {
+  outline: none;
+  border-color: #e62429;
+  box-shadow: 0 0 5px #e62429;
+}
+
+/* BOTÃO */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-actions input {
+  background: #e62429;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-actions input:hover {
+  background: #b71c1c;
+}
+
+/* ERROS */
+.form-errors {
+  background: #330000;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.form-errors h2 {
+  color: #ff4d4d;
+}
+
+.form-errors li {
+  color: #ff9999;
+}
+
+/* GRID */
+.franchise-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.franchise-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER */
+.franchise-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.6);
+}
+
+/* NOME */
+.franchise-card h2 {
+  color: #e62429;
+  margin-bottom: 15px;
+}
+
+/* AÇÕES */
+.franchise-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* LINKS */
+.franchise-actions a {
+  text-decoration: none;
+  background: #333;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.franchise-actions a:hover {
+  background: #e62429;
+}
+
+/* BOTÃO DELETE */
+.franchise-actions form input {
+  background: #e62429;
+  border: none;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.franchise-actions form input:hover {
+  background: #b71c1c;
+}
+
+/* BOTÃO NOVA FRANQUIA */
+.add-franchise {
+  text-align: center;
+  margin: 30px;
+}
+
+.add-franchise a {
+  background: #e62429;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.add-franchise a:hover {
+  background: #b71c1c;
+}

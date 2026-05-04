@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/create"
-  get "users/edit"
-  get "users/update"
-  get "users/destroy"
+  get  "/login",  to: "sessions#new"
+  post "/login",  to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  get  "/signup", to: "users#new"
+  post "/users", to: "users#create"
 
   resources :franchises
   resources :comics
+
+  root "comics#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

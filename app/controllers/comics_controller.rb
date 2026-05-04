@@ -1,5 +1,8 @@
 class ComicsController < ApplicationController
-  before_action :set_comic, only: %i[ show edit update destroy ]
+  before_action :require_login, except: [:index, :show]
+  before_action :set_comic, only: [:show, :edit, :update, :destroy]
+
+
   
   def index
       @comics = Comic.all
@@ -43,6 +46,6 @@ class ComicsController < ApplicationController
     end
 
   def comic_params
-    params.require(:comic).permit(:name, :issue, :publish_date, :page_number, :image_url, :franchise_id)
+    params.require(:comic).permit(:name, :issue, :publishData, :pageNumber, :imageUrl, :franchise_id)
   end
 end
