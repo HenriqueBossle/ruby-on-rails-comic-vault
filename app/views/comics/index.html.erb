@@ -9,8 +9,7 @@
       <% end %>
 
       <div class="comic-info">
-        <h2><%= comic.name %></h2>
-        <p>Edição #<%= comic.issue %></p>
+        <h2><%= comic.name %> #<%= comic.issue %></h2>
         <p><%= comic.publishData %></p>
         <p><%= comic.pageNumber %> páginas</p>
         <%= link_to "Ver mais", comic_path(comic) %>

@@ -4,6 +4,13 @@ body {
   font-family: 'Arial Black', sans-serif;
   background-color: #0d0d0d;
   color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 /* TÍTULO */
@@ -85,7 +92,6 @@ body {
   color: #ccc;
   padding: 22px 30px;
   border-top: 1px solid rgba(230, 36, 41, 0.35);
-  margin-top: 40px;
 }
 
 .site-footer .footer-content {
@@ -568,6 +574,14 @@ nav input:hover {
 .franchise-actions a:hover {
   background: #e62429;
   transform: translateY(-1px);
+}
+
+.franchise-actions a.btn-delete {
+  background: #e62429;
+}
+
+.franchise-actions a.btn-delete:hover {
+  background: #b71c1c;
 }
 
 /* BOTÃO DELETE */

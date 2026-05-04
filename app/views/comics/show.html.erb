@@ -6,10 +6,9 @@
 
   <div class="comic-show-info">
 
-    <h1><%= @comic.name %></h1>
-    <p><strong>Edição:</strong> <%= @comic.issue %></p>
-    <p><strong>Data:</strong> <%= @comic.publishData %></p>
-    <p><strong>Páginas:</strong> <%= @comic.pageNumber %></p>
+    <h1><%= @comic.name %> #<%= @comic.issue %></h1>
+    <p><strong>Data de publicação:</strong> <%= @comic.publishData %></p>
+    <p><strong>Número de páginas:</strong> <%= @comic.pageNumber %></p>
     <p><strong>Franquia:</strong> <%= @comic.franchise.name %></p>
     
 
