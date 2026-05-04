@@ -1,12 +1,9 @@
 class FranchisesController < ApplicationController
-  before_action :require_login, except: [:index, :show]
-  before_action :set_franchise, only: %i[ show edit update destroy ]
+  before_action :require_login, except: [:index]
+  before_action :set_franchise, only: %i[ edit update destroy ]
 
   def index
       @franchises = Franchise.all
-  end
-
-  def show
   end
 
   def new
