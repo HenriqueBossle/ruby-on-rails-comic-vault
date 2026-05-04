@@ -1,6 +1,9 @@
-<%= form_with model: franchise do |f| %>
+<h1 class="form-title">Nova Franquia</h1>
+
+<%= form_with model: franchise, html: { class: "comic-form" } do |f| %>
+
   <% if franchise.errors.any? %>
-    <div>
+    <div class="form-errors">
       <h2><%= pluralize(franchise.errors.count, "erro") %> impediram o salvamento:</h2>
       <ul>
         <% franchise.errors.full_messages.each do |msg| %>
@@ -10,14 +13,13 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :name, "Nome da Franquia" %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, "Nome da Franquia" %>
+    <%= f.text_field :name, placeholder: "Ex: Marvel, DC..." %>
   </div>
 
-  <br>
-
-  <div>
+  <div class="form-actions">
     <%= f.submit "Criar Franquia" %>
   </div>
+
 <% end %>

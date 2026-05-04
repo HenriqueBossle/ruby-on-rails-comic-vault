@@ -256,3 +256,218 @@ nav input:hover {
   width: 100%;
   box-sizing: border-box;
 }
+
+.comic-show {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+}
+
+.comic-show-img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.comic-show-info {
+  color: white;
+}
+
+.comic-show-info h1 {
+  color: #e62429;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions a,
+.actions form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.actions a {
+  color: white;
+  text-decoration: none;
+  background: #333;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.actions a:hover {
+  background: #e62429;
+}
+
+.actions input {
+  background: #e62429;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* TÍTULO */
+.form-title {
+  text-align: center;
+  color: #e62429;
+  margin-bottom: 20px;
+}
+
+/* CONTAINER FORM */
+.comic-form {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.2);
+}
+
+/* GRUPO */
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #e62429;
+}
+
+/* INPUT */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #0d0d0d;
+  color: white;
+}
+
+/* FOCUS */
+.form-group input:focus {
+  outline: none;
+  border-color: #e62429;
+  box-shadow: 0 0 5px #e62429;
+}
+
+/* BOTÃO */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-actions input {
+  background: #e62429;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-actions input:hover {
+  background: #b71c1c;
+}
+
+/* ERROS */
+.form-errors {
+  background: #330000;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.form-errors h2 {
+  color: #ff4d4d;
+}
+
+.form-errors li {
+  color: #ff9999;
+}
+
+/* GRID */
+.franchise-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CARD */
+.franchise-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER */
+.franchise-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(230, 36, 41, 0.6);
+}
+
+/* NOME */
+.franchise-card h2 {
+  color: #e62429;
+  margin-bottom: 15px;
+}
+
+/* AÇÕES */
+.franchise-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* LINKS */
+.franchise-actions a {
+  text-decoration: none;
+  background: #333;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.franchise-actions a:hover {
+  background: #e62429;
+}
+
+/* BOTÃO DELETE */
+.franchise-actions form input {
+  background: #e62429;
+  border: none;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.franchise-actions form input:hover {
+  background: #b71c1c;
+}
+
+/* BOTÃO NOVA FRANQUIA */
+.add-franchise {
+  text-align: center;
+  margin: 30px;
+}
+
+.add-franchise a {
+  background: #e62429;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.add-franchise a:hover {
+  background: #b71c1c;
+}

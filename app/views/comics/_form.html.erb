@@ -1,5 +1,3 @@
-<h1 class="form-title">Nova HQ</h1>
-
 <%= form_with model: comic, html: { class: "comic-form" } do |f| %>
 
   <% if comic.errors.any? %>
@@ -40,11 +38,11 @@
 
   <div class="form-group">
     <%= f.label :franchise_id, "Franquia" %>
-    <%= f.collection_select :franchise_id, Franchise.all, :id, :name, prompt: "Selecione uma franquia" %>
+    <%= f.collection_select :franchise_id, Franchise.order(:name), :id, :name, prompt: "Selecione uma franquia" %>
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Criar HQ" %>
+    <%= f.submit comic.persisted? ? "Atualizar HQ" : "Criar HQ" %>
   </div>
 
 <% end %>

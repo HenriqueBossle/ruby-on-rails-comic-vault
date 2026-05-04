@@ -13,12 +13,10 @@
         <p>Edição #<%= comic.issue %></p>
         <p><%= comic.publishData %></p>
         <p><%= comic.pageNumber %> páginas</p>
+        <%= link_to "Ver mais", comic_path(comic) %>
+   
       </div>
 
     </div>
   <% end %>
-</div>
-
-<div class="logout">
-  <%= button_to "Logout", logout_path, method: :delete %>
 </div>

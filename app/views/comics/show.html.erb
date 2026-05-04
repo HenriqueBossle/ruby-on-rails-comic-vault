@@ -5,11 +5,8 @@
   <% end %>
 
   <div class="comic-show-info">
-    <h1><%= @comic.name %></h1>
-    <% if comic.imageUrl.present? %>
-        <img src="<%= comic.imageUrl %>" alt="comic image">
-    <% end %>
 
+    <h1><%= @comic.name %></h1>
     <p><strong>Edição:</strong> <%= @comic.issue %></p>
     <p><strong>Data:</strong> <%= @comic.publishData %></p>
     <p><strong>Páginas:</strong> <%= @comic.pageNumber %></p>
