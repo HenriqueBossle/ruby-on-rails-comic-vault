@@ -1,4 +1,5 @@
 class FranchisesController < ApplicationController
+  before_action :require_login, except: [:index, :show]
   before_action :set_franchise, only: %i[ show edit update destroy ]
 
   def index

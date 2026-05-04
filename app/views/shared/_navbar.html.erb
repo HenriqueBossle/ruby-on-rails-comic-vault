@@ -1,19 +1,26 @@
 <nav>
-  <h2>ComicVault</h2>
+  <div class="nav-left">
+    <h2>ComicVault</h2>
 
-  <% if logged_in? %>
-    <%= link_to "Ver HQs", comics_path %>
-    <%= link_to "Franquias HQ", franchises_path %>
-    <%= link_to "Adicionar HQ", new_comic_path %>
-    <%= link_to "Adicionar Franquia", new_franchise_path %>
+    <div class="main-links">
+      <%= link_to "Ver HQs", comics_path %>
+      <%= link_to "Franquias HQ", franchises_path %>
 
+      <% if logged_in? %>
+        <%= link_to "Adicionar HQ", new_comic_path %>
+        <%= link_to "Adicionar Franquia", new_franchise_path %>
+      <% end %>
+    </div>
+  </div>
 
-
-    <%= button_to "Logout", "/logout", method: :delete %>
-  <% else %>
-    <%= link_to "Login", "/login" %>
-    <%= link_to "Cadastrar", "/signup" %>
-  <% end %>
+  <div class="nav-right">
+    <% if logged_in? %>
+      <%= button_to "Logout", "/logout", method: :delete, class: "btn-logout" %>
+    <% else %>
+      <div class="auth-links">
+        <%= link_to "Login", "/login", class: "btn-login" %>
+        <%= link_to "Cadastrar", "/signup", class: "btn-signup" %>
+      </div>
+    <% end %>
+  </div>
 </nav>
-
-<hr>

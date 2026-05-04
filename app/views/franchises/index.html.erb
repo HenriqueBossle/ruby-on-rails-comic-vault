@@ -7,8 +7,8 @@
       <h2><%= franchise.name %></h2>
 
       <div class="franchise-actions">
-        <%= link_to "Editar", edit_franchise_path(franchise) %>
-        <%= button_to "Deletar", franchise, method: :delete %>
+        <%= link_to "Editar", edit_franchise_path(franchise), class: "btn-edit" %>
+        <%= button_to "Deletar", franchise, method: :delete, class: "btn-delete" %>
       </div>
     </div>
 
