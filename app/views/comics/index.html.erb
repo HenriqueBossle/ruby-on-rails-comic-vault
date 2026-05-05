@@ -1,5 +1,10 @@
 <h1 class="title">MINHAS HQs</h1>
 
+<%= form_with url: comics_path, method: :get, class: "search-form" do |form| %>
+  <%= form.text_field :query, value: params[:query], placeholder: "Pesquisar HQ...", class: "search-input" %>
+  <%= form.submit "Pesquisar HQ", class: "search-btn" %>
+<% end %>
+
 <div id="comics">
   <% @comics.each do |comic| %>
     <div class="comic-card">
@@ -18,4 +23,9 @@
 
     </div>
   <% end %>
+</div>
+<div class="add-franchise">
+<% if logged_in? %>
+  <%= link_to "Adicionar HQ", new_comic_path %>
+<% end %>
 </div>

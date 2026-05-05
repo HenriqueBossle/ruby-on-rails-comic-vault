@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <h1 class="form-title">Nova Franquia</h1>
+  <h1 class="form-title"><%= franchise.new_record? ? "Nova Franquia" : "Editar Franquia" %></h1>
 
   <div class="form-group">
     <%= f.label :name, "Nome da Franquia" %>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Criar Franquia" %>
+    <%= f.submit franchise.new_record? ? "Criar Franquia" : "Atualizar Franquia" %>
   </div>
 
 <% end %>

@@ -13,7 +13,7 @@ class FranchisesController < ApplicationController
   def create
     @franchise = Franchise.new(franchise_params)
     if @franchise.save
-      redirect_to @franchise
+      redirect_to franchises_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class FranchisesController < ApplicationController
 
   def update
     if @franchise.update(franchise_params)
-      redirect_to @franchise
+      redirect_to franchises_path
     else
       render :edit, status: :unprocessable_entity
     end
