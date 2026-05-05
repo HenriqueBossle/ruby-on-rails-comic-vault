@@ -11,11 +11,12 @@
     <p><strong>Número de páginas:</strong> <%= @comic.pageNumber %></p>
     <p><strong>Franquia:</strong> <%= @comic.franchise.name %></p>
     
-
+    <% if logged_in? %>
     <div class="actions">
       <%= link_to "Editar", edit_comic_path(@comic), class: "btn-edit" %>
       <%= button_to "Deletar", @comic, method: :delete, class: "btn-delete" %>
     </div>
+    <% end %>
 
     <%= link_to "Voltar", comics_path, class: "back-link" %>
   </div>

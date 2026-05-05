@@ -9,7 +9,7 @@
       <div class="franchise-actions">
        <% if logged_in? %>
         <%= link_to "Editar", edit_franchise_path(franchise), class: "btn-edit" %>
-        <%= link_to "Deletar", franchise, method: :delete, class: "btn-delete" %>
+        <%= button_to "Deletar", franchise, method: :delete, class: "btn-delete" %>
        <% end %>
       </div>
      

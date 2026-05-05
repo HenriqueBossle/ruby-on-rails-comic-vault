@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get  "/signup", to: "users#new"
   post "/users", to: "users#create"
 
-  resources :franchises
+  resources :franchises, except: [:show]
+  
   resources :comics
 
   root "comics#index"

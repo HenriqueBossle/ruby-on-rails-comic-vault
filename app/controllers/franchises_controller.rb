@@ -32,7 +32,7 @@ class FranchisesController < ApplicationController
 
   def destroy
     @franchise.destroy
-    redirect_to franchises_path
+    redirect_to franchises_path, notice: "Franquia deletada com sucesso!"
   end
 
   private
