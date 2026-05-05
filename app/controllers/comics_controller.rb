@@ -5,7 +5,12 @@ class ComicsController < ApplicationController
 
   
   def index
+    if params[:query].present?
+      @comics = Comic.joins(:franchise)
+                    .where("comics.name LIKE ? OR franchises.name LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    else
       @comics = Comic.all
+    end
   end
 
   def show
@@ -16,7 +21,15 @@ class ComicsController < ApplicationController
   end
 
   def create
+    uploaded_file = params[:comic][:imageUrl]
+
+    if uploaded_file
+      result = Cloudinary::Uploader.upload(uploaded_file)
+      image_url = result["secure_url"]
+    end
     @comic = Comic.new(comic_params)
+    @comic.imageUrl = image_url
+
     if @comic.save
       redirect_to @comic
     else
@@ -27,13 +40,21 @@ class ComicsController < ApplicationController
   def edit
   end
 
-  def update
-    if @comic.update(comic_params)
-      redirect_to @comic
-    else
-      render :edit, status: :unprocessable_entity
-    end
+def update
+  uploaded_file = params[:comic][:imageUrl]
+
+  if uploaded_file
+    result = Cloudinary::Uploader.upload(uploaded_file)
+    image_url = result["secure_url"]
+    @comic.imageUrl = image_url
   end
+
+  if @comic.update(comic_params)
+    redirect_to @comic
+  else
+    render :edit, status: :unprocessable_entity
+  end
+end
 
   def destroy
     @comic.destroy
@@ -46,6 +67,6 @@ class ComicsController < ApplicationController
     end
 
   def comic_params
-    params.require(:comic).permit(:name, :issue, :publishData, :pageNumber, :imageUrl, :franchise_id)
+    params.require(:comic).permit(:name, :issue, :publishData, :pageNumber, :franchise_id)
   end
 end

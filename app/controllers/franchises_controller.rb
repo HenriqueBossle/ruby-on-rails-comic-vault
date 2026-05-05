@@ -1,11 +1,9 @@
 class FranchisesController < ApplicationController
-  before_action :set_franchise, only: %i[ show edit update destroy ]
+  before_action :require_login, except: [:index]
+  before_action :set_franchise, only: %i[ edit update destroy ]
 
   def index
       @franchises = Franchise.all
-  end
-
-  def show
   end
 
   def new
@@ -15,7 +13,7 @@ class FranchisesController < ApplicationController
   def create
     @franchise = Franchise.new(franchise_params)
     if @franchise.save
-      redirect_to @franchise
+      redirect_to franchises_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +24,7 @@ class FranchisesController < ApplicationController
 
   def update
     if @franchise.update(franchise_params)
-      redirect_to @franchise
+      redirect_to franchises_path
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +32,7 @@ class FranchisesController < ApplicationController
 
   def destroy
     @franchise.destroy
-    redirect_to franchises_path
+    redirect_to franchises_path, notice: "Franquia deletada com sucesso!"
   end
 
   private

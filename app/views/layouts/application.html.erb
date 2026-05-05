@@ -23,7 +23,10 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
   </body>
 </html>

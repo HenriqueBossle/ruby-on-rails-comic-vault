@@ -6,17 +6,17 @@
 
   <div class="comic-show-info">
 
-    <h1><%= @comic.name %></h1>
-    <p><strong>Edição:</strong> <%= @comic.issue %></p>
-    <p><strong>Data:</strong> <%= @comic.publishData %></p>
-    <p><strong>Páginas:</strong> <%= @comic.pageNumber %></p>
+    <h1><%= @comic.name %> #<%= @comic.issue %></h1>
+    <p><strong>Data de publicação:</strong> <%= @comic.publishData %></p>
+    <p><strong>Número de páginas:</strong> <%= @comic.pageNumber %></p>
     <p><strong>Franquia:</strong> <%= @comic.franchise.name %></p>
     
-
+    <% if logged_in? %>
     <div class="actions">
-      <%= link_to "Editar", edit_comic_path(@comic) %>
-      <%= button_to "Deletar", @comic, method: :delete %>
+      <%= link_to "Editar", edit_comic_path(@comic), class: "btn-edit" %>
+      <%= button_to "Deletar", @comic, method: :delete, class: "btn-delete" %>
     </div>
+    <% end %>
 
     <%= link_to "Voltar", comics_path, class: "back-link" %>
   </div>

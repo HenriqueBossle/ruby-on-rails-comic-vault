@@ -7,14 +7,21 @@
       <h2><%= franchise.name %></h2>
 
       <div class="franchise-actions">
-        <%= link_to "Editar", edit_franchise_path(franchise) %>
-        <%= button_to "Deletar", franchise, method: :delete %>
+      <%= link_to "Ver comics", comics_path(query: franchise.name), class: "btn-edit" %>
+
+       <% if logged_in? %>
+        <%= link_to "Editar", edit_franchise_path(franchise), class: "btn-edit" %>
+        <%= button_to "Deletar", franchise, method: :delete, class: "btn-delete" %>
+       <% end %>
       </div>
+     
     </div>
 
   <% end %>
 </div>
 
 <div class="add-franchise">
+<% if logged_in? %>
   <%= link_to "Nova Franquia", new_franchise_path %>
+<% end %>
 </div>
