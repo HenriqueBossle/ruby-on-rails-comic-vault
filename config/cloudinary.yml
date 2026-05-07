@@ -5,13 +5,13 @@ development:
   secure: true
 
 test:
-  cloud_name: SEU_CLOUD_NAME
-  api_key: SEU_API_KEY
-  api_secret: SEU_API_SECRET
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['API_KEY'] %>
+  api_secret: <%= ENV['API_SECRET'] %>
   secure: true
 
 production:
-  cloud_name: SEU_CLOUD_NAME
-  api_key: SEU_API_KEY
-  api_secret: SEU_API_SECRET
+  cloud_name: <%= ENV['CLOUD_NAME'] %>
+  api_key: <%= ENV['API_KEY'] %>
+  api_secret: <%= ENV['API_SECRET'] %>
   secure: true
