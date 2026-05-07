@@ -3,11 +3,9 @@ class ComicsController < ApplicationController
   before_action :set_comic, only: [:show, :edit, :update, :destroy]
 
 
-  
   def index
     if params[:query].present?
-      @comics = Comic.joins(:franchise)
-                    .where("comics.name LIKE ? OR franchises.name LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+      @comics = Comic.search(params[:query]).order(:issue)
     else
       @comics = Comic.all
     end
