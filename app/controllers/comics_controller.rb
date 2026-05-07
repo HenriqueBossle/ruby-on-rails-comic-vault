@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
-  before_action :require_login, except: [:index, :show]
-  before_action :set_comic, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [ :index, :show ]
+  before_action :set_comic, only: [ :show, :edit, :update, :destroy ]
 
 
   def index
