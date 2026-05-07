@@ -15,8 +15,7 @@
 
       <div class="comic-info">
         <h2><%= comic.name %> #<%= comic.issue %></h2>
-        <p><%= comic.publishData %></p>
-        <p><%= comic.pageNumber %> páginas</p>
+        <strong> <p><%= comic.franchise.name %> </p></strong> 
         <%= link_to "Ver mais", comic_path(comic) %>
    
       </div>

@@ -5,11 +5,11 @@
   <% end %>
 
   <div class="comic-show-info">
-
     <h1><%= @comic.name %> #<%= @comic.issue %></h1>
+    <h2><strong> <%= @comic.franchise.name %> </strong></h2>
     <p><strong>Data de publicação:</strong> <%= @comic.publishData %></p>
     <p><strong>Número de páginas:</strong> <%= @comic.pageNumber %></p>
-    <p><strong>Franquia:</strong> <%= @comic.franchise.name %></p>
+    
     
     <% if logged_in? %>
     <div class="actions">
