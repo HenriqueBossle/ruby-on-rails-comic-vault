@@ -21,12 +21,14 @@ class ComicsController < ApplicationController
   def create
     uploaded_file = params[:comic][:imageUrl]
 
+    image_url = nil
+
     if uploaded_file
       result = Cloudinary::Uploader.upload(uploaded_file)
       image_url = result["secure_url"]
     end
     @comic = Comic.new(comic_params)
-    @comic.imageUrl = image_url
+    @comic.imageUrl = image_url if image_url
 
     if @comic.save
       redirect_to @comic
