@@ -1,24 +1,51 @@
-# README
+# Comic Vault
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema web desenvolvido em Ruby on Rails para gerenciamento de minhas HQs e suas franquias, permitindo cadastro, edição, autenticação de usuários e organização dos quadrinhos por franquia.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## 🚀 Tecnologias Utilizadas
 
-* System dependencies
+* Ruby on Rails
+* Neon DB
+* Cloudinary
+* HTML
+* CSS
+* Render (Deploy)
+  
+---
 
-* Configuration
+## 📚 Funcionalidades
 
-* Database creation
+### 👤 Autenticação de usuários
 
-* Database initialization
+* Cadastro de usuários
+* Login e logout
+* Controle de acesso
+* Proteção de rotas
 
-* How to run the test suite
+### 📖 Gerenciamento de HQs
 
-* Services (job queues, cache servers, search engines, etc.)
+* Cadastro de HQs
+* Edição e exclusão
+* Upload de imagens hospedadas remotamente no Cloudinary
+* Organização por franquias
+* Ordenação por edição/issue
+* Pesquisa por nome
+* Pesquisa por franquia
 
-* Deployment instructions
+### 🏢 Franquias
 
-* ...
+* Cadastro de franquias
+* Associação entre franquias e HQs
+* Listagem de HQs por franquia
+
+### 🔎 Sistema de Busca
+
+* Busca por nome da HQ
+* Busca por franquia
+* Busca por número de edição
+* Busca por data
+* Ordenação de resultados
+
+Este projeto foi desenvolvido com o objetivo de aprender na prática o funcionamento do framework Ruby on Rails, explorando conceitos como MVC, autenticação, CRUD, relacionamentos entre modelos, upload de imagens, integração com banco de dados e deploy de aplicações web.
