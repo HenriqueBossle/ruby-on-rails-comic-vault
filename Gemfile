@@ -5,7 +5,7 @@ gem "rails", "~> 8.1.3"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Using sqlite
-gem "sqlite3", "~> 2.0"
+gem "sqlite3", "~> 2.9"
 # Using postgresql
 gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
